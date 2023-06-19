@@ -15,3 +15,12 @@ exports.insertProduct = async(req,res)=>{
         res.json({error:error.message})
     }
 }
+
+//getProducts
+exports.getProducts = async(req,res)=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+};
