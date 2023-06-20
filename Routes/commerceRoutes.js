@@ -1,5 +1,5 @@
 const express = require("express");
-const { insertProduct } = require("../Controllers/commerceControllers");
+const { insertProduct, getProducts } = require("../Controllers/commerceControllers");
 const routes = express.Router();
 
 
@@ -10,7 +10,8 @@ routes.post('/newProduct', insertProduct);
 
 
 
-
+//getProducts
+routes.get('/getProducts', getProducts);
 
 
 

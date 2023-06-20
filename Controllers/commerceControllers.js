@@ -19,8 +19,9 @@ exports.insertProduct = async(req,res)=>{
 //getProducts
 exports.getProducts = async(req,res)=>{
     try {
-        
+        const rslt = await knex.select('*').from("Products")
+        res.status(200).json({products:rslt})
     } catch (error) {
-        
+        res.status(400).json({error:error.message})
     }
 };
