@@ -16,7 +16,7 @@ exports.insertProduct = async(req,res)=>{
     }
 }
 
-//getProducts
+//getAllProducts
 exports.getProducts = async(req,res)=>{
     try {
         const rslt = await knex.select('*').from("Products")
@@ -25,3 +25,12 @@ exports.getProducts = async(req,res)=>{
         res.status(400).json({error:error.message})
     }
 };
+//getSelectedProduct
+exports.getSelectedProduct = async(req,res)=>{
+    try {
+        const rslt = await knex.select('*').from("Products").where('id', req.query.proId);
+        res.status(200).json({product:rslt})
+    } catch (error) {
+        res.status(400).json({error:error.message})
+    }
+}
